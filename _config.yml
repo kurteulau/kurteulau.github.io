@@ -98,6 +98,7 @@ author:
   bio              : "I am a former math and computer science teacher making a career change into a data science."
   location         : "California"
   email            :
+  linkedin         : kurt-eulau
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
