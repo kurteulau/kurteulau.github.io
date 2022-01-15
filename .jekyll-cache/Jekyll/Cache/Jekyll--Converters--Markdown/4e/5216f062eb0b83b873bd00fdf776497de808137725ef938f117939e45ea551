@@ -1,0 +1,14 @@
+I"�<h2 id="problem-description">Problem Description</h2>
+<p>Lack of access to energy for lighting and cooking presents a formidable obstacle to development in Nigeria. Solar energy in particular could play
+a meaningful role in alleviating energy poverty in Nigeria and elsewhere. In order to provide basic information
+about electricity as well as cooking fuels, the World Bank conducts “Multi-Tier Framework” surveys in conjunction with host nations.
+For Nigeria, survey teams interviewed over 3,500 households. While the trove of data is public, it is also difficult to parse, 
+requires additional cleaning, and is hard to understand without additional visualizations. As an analyst as Catalyst Off-Grid Advisors,
+I am currently building data visualizations so Nigerian solar companies, development practioners, and more can leverage the MTF survey
+data to inform their decision making.</p>
+
+<h2 id="solution">Solution</h2>
+<p>Using a combination of R, and the Altair data visualization package for Python, I created interactive charts to help others make sense of the data.
+<br /><br /><br /><br />
+<img src="/img/posts/mtf.gif" alt="mtf-gif" style="border-radius:5%; display:block; margin-left:auto;margin-right: auto; width: 80%;" /></p>
+:ET
