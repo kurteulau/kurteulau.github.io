@@ -1,0 +1,3 @@
+I"²<h1 id="problem-description">Problem Description</h1>
+<p>Predict the operating condition of 14,850 unlabelled waterpoints given a labelled dataset of 54,900 waterpoints. Features in the labelled dataset include characteristics such as the location, installer, construction year, and type of well. This provided dataset has missing and incorrect values.  This project is an entry in the Pump It Up competition held by Driven Data.</p>
+:ET

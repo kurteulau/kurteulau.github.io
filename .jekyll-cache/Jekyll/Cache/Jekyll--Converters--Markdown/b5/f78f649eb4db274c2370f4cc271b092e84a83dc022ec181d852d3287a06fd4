@@ -1,0 +1,41 @@
+I"9<h1 id="problem-description">Problem Description</h1>
+<p>Predict the operating condition of 14,850 unlabelled waterpoints given a labelled dataset of 54,900 waterpoints. Features in the labelled dataset include characteristics such as the location, installer, construction year, and type of well. This provided dataset has missing and incorrect values.  This project is an entry in the Pump It Up competition held by Driven Data.</p>
+
+<p>A full description from Driven Data can be found <a href="https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table/page/25/">here</a>.
+<br />
+<br /></p>
+
+<h3 id="datasets">Datasets</h3>
+<p>The rules of the competition prohibit the publication of the data by third parties, though you can find the problem description at Driven Data using this <a href="https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table/page/25/">link</a>. Once you log in or create an account you can then gain access to the datasets.
+<br />
+<br /></p>
+
+<h1 id="workflow-of-notebooks-as-seen-in-github">Workflow of notebooks as seen in Github</h1>
+<ol>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">EDA_clean.ipynb</code> notebook contains plots and steps taken to clean the data. Some values are also imputed. Please note that several functions used in this notebook have been stored in <code class="language-plaintext highlighter-rouge">imputing_functions.py</code> in order to declutter the notebook. The data is then exported as a .csv file.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">train_catboost.ipynb</code> and <code class="language-plaintext highlighter-rouge">train_rf.ipynb</code> import the .csv file from  <code class="language-plaintext highlighter-rouge">EDA_clean.ipynb</code> and train a Catboost and Random Forest model, respectively.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">eval_catboost.ipynb</code> and  <code class="language-plaintext highlighter-rouge">eval_rf.ipynb</code> export a .csv file in the format required by the competition. They both require that the evaluation dataset provided by Driven Data be cleaned with <code class="language-plaintext highlighter-rouge">EDA_clean.ipynb</code>. The evaluation dataset does not include labels, as these are stored internally at Driven Data and are used to calculate the accuarcy submitted models.
+<br />
+<br /></p>
+  </li>
+</ol>
+
+<h1 id="notes">Notes</h1>
+<p>Currently, the Random Forest model performs better on the training dataset but significantly worse during evaluation compared to the CatBoost model.</p>
+
+<p>I have used GridSearchCV on both Random Forest and CatBoost models to tune hyperparameters but did not achieve an increase in accuracy.</p>
+
+<p>Next steps (when I have the time) could include:</p>
+<ul>
+  <li>better imputation of missing data, especially construction year, population, and other numerical features</li>
+  <li>using regular expressions to match funders and installers rather than just forcing all to lower case and removing double speaces</li>
+  <li>assessing the reasons for the Random Forest model to do well in training and then losing around 18% accuracy during evaluation, despite the use of cross-validation and stratifying duing train_test_split</li>
+  <li>incorporate ensemble method to increase accuracy</li>
+</ul>
+
+:ET
