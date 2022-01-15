@@ -1,0 +1,18 @@
+I"/<h2 id="problem-description">Problem Description</h2>
+<p>Millions of people in Nigeria lack access to electricity, either through intermittent power delivery via the national grid or lack of transmission
+lines that can reach their household. As we move towards a decarbonized future, off-grid solar power provides a powerful tool to address both
+energy poverty and climate change.</p>
+
+<p><img src="/img/posts/solar_lights.jpg" alt="mtf-gif" style="border-radius:5%; display:block; margin-left:auto;margin-right: auto; width: 50%;" /></p>
+
+<p>Enterprises or development partners seeking to find the best places to introduce off-grid solar products, however, 
+do not always know which locations present the best environment for success.</p>
+
+<h2 id="solution">Solution</h2>
+<p>I curate, cleanse, and publish Using a combination of Mapbox
+I am currently building data visualizations using a combination of R and Altair, a Python data visualization package. With our work Nigerian solar companies, development practioners, and more can leverage the MTF survey data to inform their decision making.
+<br /><br /><br />
+<img src="/img/posts/mtf.gif" alt="mtf-gif" style="border-radius:5%; display:block; margin-left:auto;margin-right: auto; width: 80%;" /></p>
+
+<p>Note: MTF Nigeria survey data visualizations not yet published.</p>
+:ET
