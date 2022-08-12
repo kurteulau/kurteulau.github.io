@@ -1,0 +1,21 @@
+I"�<h2 id="problem-description">Problem Description</h2>
+<p>570 million people in Sub-Saharan Africa lack a connection to an national electric grid. Gasoline powered generators and kerosene laterns rely on expensive fuel while emitting tons of dioxide and other air pollutants. Off-grid solar home systems offer a zero carbon power solution that is more cost effective in the longer term than conventional energy technologies.</p>
+
+<p><img src="img/posts/d_light_shs.png" alt="d_light_shs" style="display:block; margin-left:auto; margin-right: auto; width: 80%;" /></p>
+
+<p>However, the upfront costs of solar home systems often exceed families’ ability to pay out of pocket so many customers pay for these systems on a pay-as-you-go payment plan. Solar retailers with customers buy products on credit seek to improve the repayment behavior of their customers in order to improve revenue.</p>
+
+<h2 id="data">Data</h2>
+<p><a href="https://planetarycomputer.microsoft.com">Microsoft’s Planetary Computer</a> stores 10,986 “chips” from the European Space Agency’s <a href="https://sentinel.esa.int/web/sentinel/missions/sentinel-2">Sentinel 2</a> satellites, comprising roughly 28 GB of data in total. Every chip contains multiple images, each capturing a certain bandwidth of light, for instance from the blue, green, red, and near infrared spectrums. These different bands can be combined to create a human-readable image. Additionally, each chip also came with a mask highlighting which pixels were cloud pixels and where were not.</p>
+
+<p><img src="/img/posts/cloud_bands.png" alt="cloud-bands" style="display:block; margin-left:auto; margin-right: auto; width: 80%;" /></p>
+
+<h2 id="solution">Solution</h2>
+<p>To identify clouds, we used <a href="https://pytorch.org">PyTorch</a> and its associated <a href="https://www.pytorchlightning.ai">Lightning</a> library to create convolution neural network running in Microsoft’s Planetary Computer. A basic convolutional neural network using a U-Net archiecture and a ResNet34 pretrained backbone achieved a baseline <a href="https://towardsdatascience.com/intersection-over-union-iou-calculation-for-evaluating-an-image-segmentation-model-8b22e2e84686">Intersection over Union</a> (IoU) score of 0.887 on the validation set, where IoU is the conventional performance metric for semantic segmentation.</p>
+
+<p>To improve upon this baseline, we first cleaned the data, manually removing 762 chips with mislabeled masks. From there, we split the data into training, validation, and test sets and then conducted a series of experiments to find out which backbones, optimizers, schedulers, cost functions, and augmentations resulted in superior performance. The execution of each model was captured by <a href="https://wandb.ai/site">Weights and Biases</a>, as shown below.</p>
+
+<p><img src="/img/posts/cnn_performance.png" alt="cloud-bands" style="display:block; margin-left:auto; margin-right: auto; width: 80%;" /></p>
+
+<p>Our plan was to combine the best feature(s) of each set of experiments (backbone, augmentations, etc.) in order to achieve the best result possible. Unfortunately, due to the demand for cloud computing resources, Microsoft Azure denied our group access to the compute resources previously made available freely to us through the Planetary Computer halfway through our experimentation. Azure subsequently declined our offer to pay for compute. We did manage to settle on Google’s Inception-v4 backbone, Adam optimizer, and the ColorJitter augmentation from <a href="https://albumentations.ai">Albumentations</a> as alterations to the model that demonstrated the highest increased in performance. We were not able to further improve using additional sequences of different augmentations, schedulers apart from CosineAnnealing LR, or cost functions potentially more potent than the vanilla CrossEntropyLoss cost function. All told, however, we did manage to improve performance to achieve an IoU of 0.907 on our validation set, or respectible improvement of 2.25% over the baseline model.</p>
+:ET

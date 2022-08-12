@@ -1,0 +1,16 @@
+I"�	<h2 id="problem-description">Problem Description</h2>
+<p>570 million people in Sub-Saharan Africa lack a connection to an national electric grid. Gasoline powered generators and kerosene laterns rely on expensive fuel while emitting tons of dioxide and other air pollutants. Off-grid solar home systems, like the <a href="https://www.dlight.com/product/d180/">d.light</a> device shown below, offer a zero carbon power solution that is more cost effective in the longer term than conventional energy technologies.</p>
+
+<p><img src="/img/posts/d_light_shs.png" alt="d_light_shs" style="display:block; margin-left:auto; margin-right: auto; width: 80%;" /></p>
+
+<p>However, the upfront costs of solar home systems often exceed families’ ability to pay out of pocket so many customers pay for these systems on a pay-as-you-go payment plan. Solar retailers with customers buy products on credit send text message reminders in an attempt to improve customer repayment. In conjunction with a solar retailer in Sub-Saharan Africa, Catalyst Off-Grid Advisors, and two other fellow graduate students at the UC Berkeley School of Information, I ran an A/B test to answer the following question: “How do text message reminders that implement minority norm framing rather than the previously utilized loss framing affect the timing of repayments for pay-as-you-go solar customers who buy at-home solar products on credit?”</p>
+
+<h2 id="the-experiment">The Experiment</h2>
+<p>To measure the effect of text messages, we tracked customers days past due at time of repayment, which is a measure of the amount of time elapsed between the expected payment date and actual payment date. We also recorded collection rate, a ratio comparing the amount expected to the amount actually paid. We ran a 5 week field experiment using blocked random assignment to assign treatment or control on a sample of 760 customers in June and July of 2022. As customers approached a payment due date, they were sent upcoming reminder messages with the control or treatment wording. In the case that customers did not pay by the expected payment date, they were sent late payment reminders 1, 7, 14, 21, and 28 days after the scheduled payment date.</p>
+
+<p><img src="/img/posts/treatment_control_txt_msgs.png" alt="d_light_shs" style="display:block; margin-left:auto; margin-right: auto; width: 80%;" /></p>
+
+<p>Prior to the experiment, we completed a systems test, satisfactory power analysis, and covariate balance check.</p>
+
+<h2 id="solution">Solution</h2>
+:ET
