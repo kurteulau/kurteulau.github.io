@@ -1,0 +1,50 @@
+I"_<h2 id="technologiesskills-used">Technologies/Skills Used</h2>
+<ul>
+  <li><a href="https://arxiv.org/abs/1810.04805">Transformers - BERT</a></li>
+  <li><a href="https://arxiv.org/abs/2006.03654">Transformers - DeBERTa</a></li>
+  <li><a href="https://www.tensorflow.org">TensorFlow</a></li>
+  <li><a href="https://keras.io">Keras</a></li>
+  <li><a href="https://spacy.io">spaCy</a></li>
+  <li><a href="https://huggingface.co">Hugging Face</a></li>
+  <li><a href="https://colab.research.google.com">Google Colab</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="problem-description">Problem Description</h2>
+<p>English language learners require timely and accurate feedback on essays in order to measure progress towards fluency. Ideally, students receive constructive feedback indicating which particular areas require greater focus. Manually grading essays with comprehensive rubrics with multiple traits, however, is a laborious process that prevents timely evaluation and is subject to bias and grader fatigue.</p>
+
+<h2 id="data--performance-metric">Data &amp; Performance Metric</h2>
+<p>Several foundations, in conjunction with Vanderbilt University and the educational non-profit The Learning Agency Lab, published the ELLIPSE dataset via Kaggle in 2022. Students wrote argumentative essays in response to a variety of different prompts, setting up a cross-prompt multi-trait AES scoring task. According to the Learning Agency Lab, the ELLIPSE corpus “comprises 3911 argumentative essays written by 8th-12th grade ELLs. The essays were scored according to six analytic measures: cohesion, syntax, vocabulary, phraseology, grammar, and conventions…each measure represents a component of proficiency in essay writing, with greater scores corresponding to greater proficiency in that measure. The scores range from 1.0 to 5.0 in increments of 0.5.” Performance we measured by lowest mean column-wise root mean squared error (MCRMSE). Below are some short excerpts from selected essays.</p>
+
+<p><br />
+<img src="/img/posts/excerpts.png" alt="experiments" style="display:block; margin-left:auto; margin-right: auto; width: 100%;" />
+<br /></p>
+
+<h2 id="experiments">Experiments</h2>
+<p>After preprocessing our text inputs and selecting a performance metric, we developed three families of models:</p>
+
+<ol>
+  <li>Baseline experiments that relied on handcrafted features created using spaCy</li>
+  <li>The most performant BERT and DeBERTa models that were fine-tuned for our particular task</li>
+  <li>Additional BERT and DeBERTa models that were used to illustrate alternative approaches</li>
+</ol>
+
+<p>A table of the baseline models, subsequent transformer-based models, and accompanying MCRMSE for the final, held-out test sets run with the same number of epochs and batch size follow below. All DeBERTa models employed DeBERTaV3</p>
+
+<h2 id="results">Results</h2>
+<p>The source of greatest progress came from “going all-in” with DeBERTa All-In-One Regression, as evidenced by its 0.3767 MCRMSE. Contrary to the one-for-each models where models were trained in parallel for each rubric trait, these all-in-one models predicted all six traits at once from the same network with a simple six node regression dense layer. Since essays that scored well in cohesion also tended to score highly in vocabulary, we hypothesize that the all-in-one models tended to perform better because one trait is highly predictive of another such that mutually reinforcing or shared signals propagate through a shared architecture, boosting performance. For example, an essay with excellent cohesion is also likely to have advanced vocabulary, and thus feedback to improve vocabulary performance would also improve that of cohesion and performance and vice versa.</p>
+
+<p><br />
+<img src="/img/posts/aes_experiments.png" alt="experiments" style="display:block; margin-left:auto; margin-right: auto; width: 60%;" /></p>
+
+<p>One hypothesis for why DeBERTa is better able to score phraseology in general is due to its enhanced mask decoder in which both absolute and relative positions of the words are taken into account instead of just the absolute position embeddings that BERT monitors. BERT’s strategy of using the absolute position vectors in the input layer hinders the ability for the BERT model to appropriately learn information regarding relative positions. DeBERTa incorporates absolute position vectors after the transformer blocks and before the softmax layer for the predicting masked tokens. In doing this, DeBERTa gathers the relative position information from all transformer blocks and only uses absolute position as complimentary information when predicting masked words. This understanding of relational position is critical in assessing the phraseology rubric. Lexicon bundles, a component of phraseology, is a prime example of why DeBERTa can assess how these words are used in relation to one another.</p>
+
+<p><br />
+<img src="/img/posts/abs_avg_residual.png" alt="abs_avg_residual" style="display:block; margin-left:auto; margin-right: auto; width: 100%;" /></p>
+
+<p>Photo credits:</p>
+<ul>
+  <li>Banner: https://www.traveldailymedia.com/chicago-ohare-airport-begins-usd-334-million-runway-extension/</li>
+</ul>
+:ET

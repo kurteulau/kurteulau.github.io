@@ -1,9 +1,0 @@
-I"<h2 id="technologiesskills-used">Technologies/Skills Used</h2>
-<ul>
-  <li>Convolutional Neural Network (CNN)</li>
-  <li>PyTorch</li>
-  <li>PyTorch Lightning</li>
-  <li>Albumentations</li>
-  <li>Azure Cloud Compute via Microsoft Planetary Computer</li>
-</ul>
-:ET
