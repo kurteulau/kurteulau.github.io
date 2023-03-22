@@ -1,4 +1,10 @@
-I"ã<h2 id="problem-description">Problem Description</h2>
+I"4<h2 id="technologiesskills-used">Technologies/Skills Used</h2>
+<ul>
+  <li><a href="https://geopandas.org/en/stable/">GeoPandas</a></li>
+  <li><a href="https://www.qgis.org/en/site/">QGIS</a></li>
+</ul>
+
+<h2 id="problem-description">Problem Description</h2>
 <p>Millions of people in Nigeria lack access to electricity, either through intermittent power delivery via the national grid or lack of transmission
 lines that can reach their household. As we move towards a decarbonized future, off-grid solar power provides a powerful tool to address both
 energy poverty and climate change. Currently, individuals living off-grid either lack electricity or rely on diesel generators for power
@@ -11,11 +17,13 @@ in consumersâ€™ pockets and preventing carbon from entering the atmosphere.</p>
 do not always have access to the the best geospatial information.</p>
 
 <h2 id="solution">Solution</h2>
-<p>I curate, cleanse, and publish location-based data using Mapbox rendered in a React-based website. 
-I am currently building data visualizations using a combination of R and Altair, a Python data visualization package. With our work, Nigerian solar companies, development practioners, and more can better execute market expansion of off-grid solar devices.
-<br /><br /><br /></p>
+<p>I curated, cleansed, and published location-based data using Mapbox rendered in a React-based website.</p>
+
+<p><br /></p>
 
 <p><img src="/img/posts/nigeria_aip.gif" alt="nigeria-aip-gif" style="border-radius:5%; display:block; margin-left:auto; margin-right: auto; width: 80%;" /></p>
 
-<p>Note: Access Insights Platform Nigeria not yet publically released. Solar latern photo credit: Nayo Technologies Ltd.</p>
+<p><br /></p>
+
+<p>Data visualizations built using a combination of R and Altair, a Python data visualization package. With our work, Nigerian solar companies, development practioners, and more can better execute market expansion of off-grid solar devices.</p>
 :ET
