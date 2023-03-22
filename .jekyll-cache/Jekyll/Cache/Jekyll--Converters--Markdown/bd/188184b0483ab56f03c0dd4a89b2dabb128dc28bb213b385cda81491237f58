@@ -1,0 +1,34 @@
+I"X<h2 id="click-here-to-access-github-repo"><a href="https://github.com/kurteulau">Click here to access Github repo</a></h2>
+
+<h2 id="technologiesskills-used">Technologies/Skills Used</h2>
+<ul>
+  <li><a href="https://geopandas.org/en/stable/">GeoPandas</a></li>
+  <li><a href="https://www.qgis.org/en/site/">QGIS</a></li>
+  <li><a href="https://www.mapbox.com/">Mapbox</a></li>
+  <li><a href="https://react.dev/">React</a></li>
+  <li><a href="https://altair-viz.github.io/">Altair</a></li>
+</ul>
+
+<h2 id="problem-description">Problem Description</h2>
+<p>Millions of people in Nigeria lack access to electricity, either through intermittent power delivery via the national grid or lack of transmission
+lines that can reach their household. As we move towards a decarbonized future, off-grid solar power provides a powerful tool to address both
+energy poverty and climate change. Currently, individuals living off-grid either lack electricity or rely on diesel generators for power
+and often turn to kerosene lamps for light. Consumer grade photovoltaic systems can provide light and power generation, keeping money 
+in consumers’ pockets and preventing carbon from entering the atmosphere.</p>
+
+<p><img src="/img/posts/solar_lights.jpg" alt="mtf-gif" style="border-radius:5%; display:block; margin-left:auto; margin-right: auto; width: 50%;" /></p>
+
+<p>However, enterprises or development partners seeking to find the best places to introduce or expand sales of off-grid solar products
+do not always have access to the the best geospatial information.</p>
+
+<h2 id="solution">Solution</h2>
+<p>I curated, cleansed, and published location-based data using Mapbox rendered in a React-based website.</p>
+
+<p><br /></p>
+
+<p><img src="/img/posts/nigeria_aip.gif" alt="nigeria-aip-gif" style="border-radius:5%; display:block; margin-left:auto; margin-right: auto; width: 80%;" /></p>
+
+<p><br /></p>
+
+<p>Data visualizations built using a combination of R and Altair, a Python data visualization package. With our work, Nigerian solar companies, development practioners, and more can better execute market expansion of off-grid solar devices.</p>
+:ET
