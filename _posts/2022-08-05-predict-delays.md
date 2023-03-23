@@ -5,6 +5,8 @@ subtitle: "Using a Databricks Spark cluster to join and analyze big data"
 background: '/img/posts/ohare.jpg'
 ---
 
+*Unfortunately I can't share the code for this project publicly, but you can `click` [here](https://github.com/catalyst-offgrid/MTF_Nigeria) `to access my Github repo containing code for other projects.`*
+
 ## Technologies/Skills Used
 * [Spark (Python)](https://spark.apache.org)
 * [MLlib](https://spark.apache.org/docs/latest/ml-guide.html)
